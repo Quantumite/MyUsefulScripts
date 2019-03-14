@@ -110,7 +110,15 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:/usr/local/go/bin
+export EDITOR=vim
 
+function mkcd {
+	if [ $# != 1 ]; then
+		echo "Usage: mkcd <dir>"
+	else
+		mkdir -p $1 && cd $1
+	fi
+}
 function mkalldirs {
 	for i in $@
 	do
