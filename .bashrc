@@ -125,3 +125,9 @@ function mkalldirs {
 		mkdir $i
 	done
 }
+function pretty_mount {
+	mount $@ | column -t
+}
+function cheat {
+	curl cheat.sh/$1
+}
